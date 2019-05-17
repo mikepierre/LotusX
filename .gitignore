@@ -45,5 +45,7 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+composer.phar
 /var
 /vendor/*
+/config/db.yml
