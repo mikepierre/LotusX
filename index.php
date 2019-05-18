@@ -1,16 +1,15 @@
 <?php
 require "vendor/autoload.php";
 
-use LotusX\model\Property;
+use LotusX\model\Sync;
 use LotusX\api\HotelBeds;
 
-$Property = new Property();
 $HotelBeds = new HotelBeds();
+$Sync = new Sync();
 
-echo '<pre>';
 $HBedsResult = json_decode($HotelBeds->getPropertyDetails());
 
-print_r($HBedsResult->hotels);
-$Property->insert($HBedsResult->hotels);
+$hotels = $HBedsResult->hotels;
+$Sync->insert($hotels);
 
 ?>
