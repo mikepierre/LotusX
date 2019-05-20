@@ -15,8 +15,10 @@ class Sync
 	public function insert(array $data)
 	{
 		echo '<pre>';
-		print_r($data[0]->rooms); exit;
+		//print_r($data); exit;
 		for ($i=0; $i < count($data); $i++) { 
+			/*
+			Profile
 			echo $data[$i]->name->content;
 			echo $data[$i]->description->content;
 			echo $data[$i]->countryCode;
@@ -36,6 +38,57 @@ class Sync
 			echo (isset($data[$i]->web) ? $data[$i]->web : null);
 			echo (isset($data[$i]->lastUpdate) ? $data[$i]->lastUpdate : null);
 			echo (isset($data[$i]->ranking) ? $data[$i]->ranking : null);
+			*/
+			//Facilities
+			for ($n=0; $n < count($data[$i]->facilities); $n++) { 
+				echo (isset($data[$i]->facilities[$n]->facilityCode) ? $data[$i]->facilities[$n]->facilityCode : null);
+				echo (isset($data[$i]->facilities[$n]->facilityGroupCode) ? $data[$i]->facilities[$n]->facilityGroupCode : null);
+				echo (isset($data[$i]->facilities[$n]->order) ? $data[$i]->facilities[$n]->order : null);
+				echo (isset($data[$i]->facilities[$n]->indYesOrNo) ? $data[$i]->facilities[$n]->indYesOrNo : null);
+				echo (isset($data[$i]->facilities[$n]->number) ? $data[$i]->facilities[$n]->number : null);
+				echo (isset($data[$i]->facilities[$n]->voucher) ? $data[$i]->facilities[$n]->voucher : null);
+			}
+			// Images
+			for ($o=0; $o < count($data[$i]->images); $o++) { 
+				# code...
+			}
+
+			for($j = 0; $j < count($data[$i]->rooms); $j++) {
+				// Rooms
+				echo (isset($data[$i]->rooms[$j]->roomCode) ? $data[$i]->rooms[$j]->roomCode : null);
+				echo (isset($data[$i]->rooms[$j]->roomType) ? $data[$i]->rooms[$j]->roomType : null);
+				echo (isset($data[$i]->rooms[$j]->characteristicCode) ? $data[$i]->rooms[$j]->characteristicCode : null);
+
+				//roomFacilities
+				if(isset($data[$i]->rooms[$j]->roomFacilities)){
+					for ($k=0; $k < count($data[$i]->rooms[$j]->roomFacilities); $k++) { 
+						# code...
+						echo (isset( $data[$i]->rooms[$j]->roomFacilities[$k]->facilityCode) ?  $data[$i]->rooms[$j]->roomFacilities[$k]->facilityCode : null);
+						echo (isset($data[$i]->rooms[$j]->roomFacilities[$k]->facilityGroupCode) ? $data[$i]->rooms[$j]->roomFacilities[$k]->facilityGroupCode : null);
+						echo (isset($data[$i]->rooms[$j]->roomFacilities[$k]->indYesOrNo) ? $data[$i]->rooms[$j]->roomFacilities[$k]->indYesOrNo : null);
+						echo (isset($data[$i]->rooms[$j]->roomFacilities[$k]->voucher) ? $data[$i]->rooms[$j]->roomFacilities[$k]->voucher : null);
+					}
+				}
+				// Room Stays
+				if(isset($data[$i]->rooms[$j]->roomStays)) {
+					for($l = 0; $l < count($data[$i]->rooms[$j]->roomStays); $l++) {
+						echo (isset($data[$i]->rooms[$j]->roomStays[$l]->stayType) ? $data[$i]->rooms[$j]->roomStays[$l]->stayType : null);
+						echo (isset($data[$i]->rooms[$j]->roomStays[$l]->order) ? $data[$i]->rooms[$j]->roomStays[$l]->order : null);
+						echo (isset($data[$i]->rooms[$j]->roomStays[$l]->description) ? $data[$i]->rooms[$j]->roomStays[$l]->description : null);
+
+						// Room Stay Facilities
+						if(isset($data[$i]->rooms[$j]->roomStays[$l]->roomStayFacilities)) {
+							for($m = 0; $m < count($data[$i]->rooms[$j]->roomStays[$l]->roomStayFacilities); $m++) {
+
+								echo (isset($data[$i]->rooms[$j]->roomStays[$l]->roomStayFacilities[$m]->facilityCode) ? $data[$i]->rooms[$j]->roomStays[$l]->roomStayFacilities[$m]->facilityCode : null);
+								echo (isset($data[$i]->rooms[$j]->roomStays[$l]->roomStayFacilities[$m]->facilityGroupCode) ? $data[$i]->rooms[$j]->roomStays[$l]->roomStayFacilities[$m]->facilityGroupCode : null);
+								echo (isset($data[$i]->rooms[$j]->roomStays[$l]->roomStayFacilities[$m]->number) ? $data[$i]->rooms[$j]->roomStays[$l]->roomStayFacilities[$m]->number : null);
+							}
+						}
+					}
+				}
+
+			}
 		}
 
 	}
