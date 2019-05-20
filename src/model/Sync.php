@@ -50,8 +50,27 @@ class Sync
 			}
 			// Images
 			for ($o=0; $o < count($data[$i]->images); $o++) { 
-				# code...
+				echo (isset($data[$i]->images[$o]->imageTypeCode) ? $data[$i]->images[$o]->imageTypeCode : null);
+				echo (isset($data[$i]->images[$o]->path) ? $data[$i]->images[$o]->path : null);
+				echo (isset($data[$i]->images[$o]->roomCode) ? $data[$i]->images[$o]->roomCode : null);
+				echo (isset($data[$i]->images[$o]->roomType) ? $data[$i]->images[$o]->roomType : null);
+				echo (isset($data[$i]->images[$o]->characteristicCode) ? $data[$i]->images[$o]->characteristicCode : null);
+				echo (isset($data[$i]->images[$o]->order) ? $data[$i]->images[$o]->order : null);
+				echo (isset($data[$i]->images[$o]->visualOrder) ? $data[$i]->images[$o]->visualOrder : null);
+
 			}
+
+			//Interst Point
+			for ($p=0; $p < count($data[$i]->interestPoints); $p++) { 
+				# code...
+				echo (isset($data[$i]->images[$p]->facilityCode) ? $data[$i]->images[$p]->facilityCode : null);
+				echo (isset($data[$i]->images[$p]->facilityGroupCode) ? $data[$i]->images[$p]->facilityGroupCode : null);
+				echo (isset($data[$i]->images[$p]->order) ? $data[$i]->images[$p]->order : null);
+				echo (isset($data[$i]->images[$p]->poiName) ? $data[$i]->images[$p]->poiName : null);
+				echo (isset($data[$i]->images[$p]->distance) ? $data[$i]->images[$p]->distance : null);
+			}
+
+			// Terminals
 
 			for($j = 0; $j < count($data[$i]->rooms); $j++) {
 				// Rooms
