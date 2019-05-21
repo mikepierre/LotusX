@@ -50,3 +50,4 @@ Temporary Items
 /vendor/*
 /config/db.yml
 /config/hotel_beds.yml
+/config/magic_stars_vacations.yml

@@ -14,7 +14,8 @@ class Locations extends ConnectToMySQL implements Crud
 		->query("
 			INSERT INTO 
 			hotel_locations_lotus_x
-			(COUNTRY_CODE,
+			(
+			COUNTRY_CODE,
 			COUNTRY_NAME,
 			DESTINATION_CODE,
 			CITY,

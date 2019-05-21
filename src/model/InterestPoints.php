@@ -14,7 +14,8 @@ class InterestPoints extends ConnectToMySQL implements Crud
 		->query("
 			INSERT INTO 
 			interest_points_lotus_x
-			(HOTEL_ID,
+			(
+			HOTEL_ID,
 			FACILITY_CODE,
 			FACILITY_GROUP_CODE,
 			ORDER,
