@@ -17,6 +17,8 @@ class Images extends ConnectToMySQL implements Crud
 			(HOTEL_ID,
 			IMAGE_TYPE_CODE,
 			IMAGE_PATH,
+			ROOM_CODE,
+			ROOM_TYPE,
 			ORDER,
 			VISUAL_ORDER,
 			CONTRACT_TYPE)
@@ -24,6 +26,8 @@ class Images extends ConnectToMySQL implements Crud
 			('".$data['HOTEL_ID']."',
 			'".$data['IMAGE_TYPE_CODE']."',
 			'".$data['IMAGE_PATH']."',
+			'".$data['ROOM_CODE']."',
+			'".$data['ROOM_TYPE']."',
 			'".$data['ORDER']."',
 			'".$data['VISUAL_ORDER']."',
 			'".$data['CONTRACT_TYPE']."'
@@ -39,6 +43,8 @@ class Images extends ConnectToMySQL implements Crud
 				HOTEL_ID,
 				IMAGE_TYPE_CODE,
 				IMAGE_PATH,
+				ROOM_CODE,
+				ROOM_TYPE,
 				ORDER,
 				VISUAL_ORDER,
 				CONTRACT_TYPE

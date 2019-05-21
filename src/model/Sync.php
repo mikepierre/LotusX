@@ -34,8 +34,8 @@ class Sync
 			
 			$hotelId = $data[$i]->code;
 			//Profile
-			$profileName = (isset($data[$i]->name->content) ? $data[$i]->name->content ? null);
-			$profileDescription = (isset($data[$i]->description->content) $data[$i]->description->content ? null);
+			$profileName = (isset($data[$i]->name->content) ? $data[$i]->name->content : null);
+			$profileDescription = (isset($data[$i]->description->content) ? $data[$i]->description->content : null);
 			$profileCountryCode = (isset($data[$i]->countryCode) ? $data[$i]->countryCode : null );
 			$profileStateCode = (isset($data[$i]->stateCode) ? $data[$i]->stateCode : null);
 			$profileDestionationCode = (isset($data[$i]->destinationCode) ? $data[$i]->destinationCode : null);
@@ -55,7 +55,7 @@ class Sync
 			$profileRanking = (isset($data[$i]->ranking) ? $data[$i]->ranking : null);
 			
 			$Profile->insert([
-				'HOTEL_ID'=>$hotelId
+				'HOTEL_ID'=>$hotelId,
 				'NAME'=>$profileName,
 				'DESCRIPTION'=>$profileDescription,
 				'COUNTRY_CODE'=>$profileCountryCode,
@@ -65,7 +65,7 @@ class Sync
 				'LONGITUDE'=>$profilelongitude,
 				'LATITUDE'=>$profileLatitude,
 				'CATEGORY_CODE,'=>$profileCategoryCode,
-				'CATEGORY_GROUP_CODE'=>,
+				'CATEGORY_GROUP_CODE'=>$profielCategoryGroupCode,
 				'ACCOMMODATION_TYPE_CODE'=>$profileAccommodationTypeCode,
 				'SEGMENT_CODES'=>null,
 				'ADDRESS'=>$profileAddress,
