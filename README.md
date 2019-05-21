@@ -11,9 +11,11 @@ composer install
 ```
 
 ## Usage
-
+### Run Sync ###
 cd into the **run** directory and execute the ./start.sh, or add the ./start.sh to cron.
 
+### Map Hotels ###
+Location Based Mapping: tbt
 
 ## Supported Suppliers
 * HotelBeds
