@@ -103,20 +103,22 @@ class Sync
 			for ($o=0; $o < count($data[$i]->images); $o++) { 
 				$imageTypeCode = (isset($data[$i]->images[$o]->imageTypeCode) ? $data[$i]->images[$o]->imageTypeCode : null);
 				$imagePath = (isset($data[$i]->images[$o]->path) ? $data[$i]->images[$o]->path : null);
-				//$roomCode = (isset($data[$i]->images[$o]->roomCode) ? $data[$i]->images[$o]->roomCode : null);
+				$roomCode = (isset($data[$i]->images[$o]->roomCode) ? $data[$i]->images[$o]->roomCode : null);
 				$roomType = (isset($data[$i]->images[$o]->roomType) ? $data[$i]->images[$o]->roomType : null);
 				$characteristicCode = (isset($data[$i]->images[$o]->characteristicCode) ? $data[$i]->images[$o]->characteristicCode : null);
 				$imagesOrder = (isset($data[$i]->images[$o]->order) ? $data[$i]->images[$o]->order : null);
 				$visualOrder = (isset($data[$i]->images[$o]->visualOrder) ? $data[$i]->images[$o]->visualOrder : null);
-				/* ???
+				
 				$Images->insert([
 					'HOTEL_ID'=>$hotelId,
 					'IMAGE_TYPE_CODE'=>$imageTypeCode,
 					'IMAGE_PATH'=>$imagePath ,
-					'ORDER'=>,
-					'VISUAL_ORDER'=>,
+					'ORDER'=>$imagesOrder,
+					'ROOM_CODE'=>$roomCode,
+			        'ROOM_TYPE'=>$roomType,
+					'VISUAL_ORDER'=>$visualOrde,
 					'CONTRACT_TYPE'=>$contractType
-				]);*/
+				]);
 			}
 
 			//Interst Point

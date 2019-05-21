@@ -14,7 +14,8 @@ class Images extends ConnectToMySQL implements Crud
 		->query("
 			INSERT INTO 
 			images_lotus_x
-			(HOTEL_ID,
+			(
+			HOTEL_ID,
 			IMAGE_TYPE_CODE,
 			IMAGE_PATH,
 			ROOM_CODE,
