@@ -3,12 +3,17 @@ namespace LotusX\model;
 
 use LotusX\util\ConnectToMySQL;
 use LotusX\interfaces\Crud;
+
 /**
-* 
-*/
+ * Class Images
+ * @package LotusX\model
+ */
 class Images extends ConnectToMySQL implements Crud
 {
-	public function insert(array $data)
+    /**
+     * @param array $data
+     */
+    public function insert(array $data)
 	{
 		$this->getConnection()
 		->query("
@@ -35,8 +40,12 @@ class Images extends ConnectToMySQL implements Crud
 			)
 			");
 	}
-	
-	public function get(array $data)
+
+    /**
+     * @param array $data
+     * @return array
+     */
+    public function get(array $data)
 	{
 		$result = 
 		$this->getConnection()

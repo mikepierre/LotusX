@@ -3,11 +3,17 @@ namespace LotusX\util;
 
 use Symfony\Component\Yaml\Yaml;
 
+
 /**
-* 
-*/
+ * Class CurlRequest
+ * @package LotusX\util
+ */
 class CurlRequest
 {
+    /**
+     * @param array $data
+     * @return mixed
+     */
     public function request(array $data)
     {
 

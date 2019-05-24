@@ -3,12 +3,18 @@ namespace LotusX\model;
 
 use LotusX\util\ConnectToMySQL;
 use LotusX\interfaces\Crud;
+
 /**
-* 
-*/
+ * Class Property
+ * @package LotusX\model
+ */
 class Property extends ConnectToMySQL implements Crud
 {
-	public function insert(array $data)
+    /**
+     * @param array $data
+     * @return mixed
+     */
+    public function insert(array $data)
 	{
 		$this->getConnection()
 		->query("
@@ -65,7 +71,11 @@ class Property extends ConnectToMySQL implements Crud
 		return $result;
 	}
 
-	public function get(array $data)
+    /**
+     * @param array $data
+     * @return array
+     */
+    public function get(array $data)
 	{
 		$result = 
 		$this->getConnection()

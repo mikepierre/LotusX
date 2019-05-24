@@ -3,9 +3,17 @@ namespace LotusX\traits;
 
 use Symfony\Component\Yaml\Yaml;
 
+/**
+ * Trait YamlDigest
+ * @package LotusX\traits
+ */
 trait YamlDigest
 {
-	protected function getYaml(array $data)
+    /**
+     * @param array $data
+     * @return mixed
+     */
+    protected function getYaml(array $data)
     {
         $dir    = __DIR__.'/../../config';
 

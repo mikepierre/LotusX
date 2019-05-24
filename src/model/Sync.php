@@ -11,12 +11,17 @@ use LotusX\model\RoomFacilities;
 use LotusX\model\RoomStays;
 use LotusX\model\RoomStayFacilities;
 
+
 /**
-* 
-*/
+ * Class Sync
+ * @package LotusX\model
+ */
 class Sync
 {
-	public function insert(array $data)
+    /**
+     * @param array $data
+     */
+    public function insert(array $data)
 	{
 		$Facilities = new Facilities();
 		$Property = new Property();
